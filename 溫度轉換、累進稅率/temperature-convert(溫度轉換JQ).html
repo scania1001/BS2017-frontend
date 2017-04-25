@@ -6,8 +6,10 @@
   <title>溫度轉換JQuery</title>
   <!-- Bootstrap core CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- Custom styles for this template -->
   <link href="stylesheets/dashboard.css" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/zebra_dialog.css" type="text/css">
 </head>
 <style>
   .text {
@@ -44,6 +46,32 @@
     80% {
       color: red;
       opacity: 6;
+    }
+  }
+  
+  h3 {
+    color: orangered;
+    font-size: 25px;
+    font-family: 微軟正黑體;
+    animation-duration: 2.2s;
+    /*動畫持續時間*/
+    animation-name: decoration;
+    /*動畫名稱*/
+    animation-iteration-count: infinite;
+    /*動畫應該運行的數量 infinite=連續*/
+  }
+  
+  @keyframes decoration {
+    0% {
+      /*color: yellow;*/
+      opacity: 0;
+    }
+    60% {
+      opacity: 0;
+    }
+    80% {
+      color: orangered;
+      opacity: 20;
     }
   }
   
@@ -109,22 +137,28 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
-          <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Reports</a></li>
-          <li><a href="#">Analytics</a></li>
-          <li><a href="#">Export</a></li>
+          <li class="active"><a href="Index.html">首頁 <span class="sr-only">(current)</span></a></li>
+          <li><a href="temperature-convert(溫度轉換JQ).html">溫度轉換</a></li>
+          <li><a href="GuessNumber.html">猜數字</a></li>
+          <li><a href="累進稅率.html">浮動稅率計算</a></li>
         </ul>
         <ul class="nav nav-sidebar">
-          <li><a href="">Nav item</a></li>
-          <li><a href="">Nav item again</a></li>
-          <li><a href="">One more nav</a></li>
-          <li><a href="">Another nav item</a></li>
-          <li><a href="">More navigation</a></li>
+          <li><a href="生命靈數.html">生命靈數</a></li>
+          <li><a href="生命靈數(ajax).html">生命靈數(ajax)</a></li>
+          <li><a href="生命靈數(get).html">生命靈數(get)</a></li>
+          <li><a href="生命靈數，日期樣式修改(ajax).html">生命靈數(日期樣式修改)</a></li>
         </ul>
         <ul class="nav nav-sidebar">
-          <li><a href="">Nav item again</a></li>
-          <li><a href="">One more nav</a></li>
-          <li><a href="">Another nav item</a></li>
+          <li><a href="新竹免費公車時刻表.html">新竹免費公車</a></li>
+          <li><a href="戶外停車資訊.html">戶外停車資訊</a></li>
+          <li><a href="YouBike.html">YouBike</a></li>
+          <li><a href="YouBike(瀑布式版面.html">YouBike(瀑布式)</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="News.html" target="_blank">肉球新聞</a></li>
+          <li><a href="Web.html" target="_blank">FrameWork</a></li>
+          <li><a href="Web2.html" target="_blank">FrameWork2</a></li>
+          <li><a href="巴哈姆特design.html" target="_blank">巴哈姆特</a></li>
         </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -161,10 +195,10 @@
               <div class="row">
                 <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
                   <div class="input-group">
-                    <input id="input" class="form-control text-right" type="text" name="temperature" value="">
+                    <input id="input" class="form-control text-right" type="text" maxlength="5" name="temperature" value="">
                     <div class="input-group-btn">
-                      <a id="convert" type="button" class="btn btn-default" onclick="doCalculate(); return false;">轉換</a>
-                      <a id="clear" type="button" class="btn btn-default" onclick="doClear(); return false;"> 清除</a>
+                      <a id="convert" type="button" class="btn btn-default">轉換</a>
+                      <a id="clear" type="button" class="btn btn-default"> 清除</a>
                       <!-- Buttons -->
                     </div>
                   </div>
@@ -190,34 +224,42 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
   <script>
     $("#convert").click(function () {
 
       var $input = $("#input"),
+
         $result = $("#result"),
         $convertC = $("#convert-c"),
         $convertF = $("#convert-f"),
         $shows = $("#text1"),
         $r = 0;
 
-      if ($convertC.prop("checked")) {
-        $r = ($input.val() * 1.8) + 32;
-        if ($r >= 0 && $r <= 50) {
+      //若沒輸入或非數字則會出現ERROR
+      if ($input.val() == "" || isNaN($input.val())) {
+        $shows.html("<h3>未輸入值或不是數字</h3>");
+      }
+      else {
+        if ($convertC.prop("checked")) {
+          $r = ($input.val() * 1.8) + 32;
+          if ($r >= 0 && $r <= 50) {
             $shows.html("好冷喔....");
-        } else {
-          $shows.html("有點太熱了");
-        }
-      } else if ($convertF.prop("checked")) {
-        $r = ($input.val() - 32) / 1.8;
-        if ($r <= 20) {
-         $shows.html("<p>好冷.....</p>");
-        } else {
-          $shows.html("<h2>太熱了啦  <strong>Warning</strong></h2>");
+          } else {
+            $shows.html("有點太熱了");
+          }
+        } else if ($convertF.prop("checked")) {
+          $r = ($input.val() - 32) / 1.8;
+          if ($r <= 20) {
+            $shows.html("<p>好冷.....</p>");
+          } else {
+            $shows.html("<h2>太熱了啦  <strong>Warning</strong></h2>");
+          }
         }
       }
-
       $result.val($r);
-
+      $("#input").val("");
 
     });
 

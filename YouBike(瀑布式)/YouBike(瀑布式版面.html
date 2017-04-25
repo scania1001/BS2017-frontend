@@ -8,7 +8,8 @@
     <title>YouBike(waterfall)</title>
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css"  rel="stylesheet"/><!--點選地圖後會放大-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet" />
+    <!--點選地圖後會放大-->
     <!-- Custom styles for this template -->
     <link href="stylesheets/dashboard.css" rel="stylesheet">
 </head>
@@ -45,22 +46,28 @@
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Reports</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Export</a></li>
+                    <li class="active"><a href="Index.html">首頁 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="temperature-convert(溫度轉換JQ).html">溫度轉換</a></li>
+                    <li><a href="GuessNumber.html">猜數字</a></li>
+                    <li><a href="累進稅率.html">浮動稅率計算</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
-                    <li><a href="">Nav item</a></li>
-                    <li><a href="">Nav item again</a></li>
-                    <li><a href="">One more nav</a></li>
-                    <li><a href="">Another nav item</a></li>
-                    <li><a href="">More navigation</a></li>
+                    <li><a href="生命靈數.html">生命靈數</a></li>
+                    <li><a href="生命靈數(ajax).html">生命靈數(ajax)</a></li>
+                    <li><a href="生命靈數(get).html">生命靈數(get)</a></li>
+                    <li><a href="生命靈數，日期樣式修改(ajax).html">生命靈數(日期樣式修改)</a></li>
                 </ul>
                 <ul class="nav nav-sidebar">
-                    <li><a href="">Nav item again</a></li>
-                    <li><a href="">One more nav</a></li>
-                    <li><a href="">Another nav item</a></li>
+                    <li><a href="新竹免費公車時刻表.html">新竹免費公車</a></li>
+                    <li><a href="戶外停車資訊.html">戶外停車資訊</a></li>
+                    <li><a href="YouBike.html">YouBike</a></li>
+                    <li><a href="YouBike(瀑布式版面.html">YouBike(瀑布式)</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="News.html" target="_blank">肉球新聞</a></li>
+                    <li><a href="Web.html" target="_blank">FrameWork</a></li>
+                    <li><a href="Web2.html" target="_blank">FrameWork2</a></li>
+                    <li><a href="巴哈姆特design.html" target="_blank">巴哈姆特</a></li>
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -104,8 +111,8 @@
                     </h3>
                 </div>
                 <div class="panel-body">
-                    <a class="location" data-fancybox
-                        href="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJADoRetu48862wwZAykrCrUmO3gOGI90&q=${lat},${lng}" target="_blank">
+                    <a class="location" data-fancybox href="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJADoRetu48862wwZAykrCrUmO3gOGI90&q=${lat},${lng}"
+                        target="_blank">
                         <!--href="https://www.google.com.tw/maps/?q=${lat},${lng}" target="_blank">-->
                         <img src="https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&markers=color:blue|${lat},${lng}&size=200x200&key=AIzaSyDOXdL-OyMxlXtdf5LoYGd8tJW0XEQ9Ddc"
                             height=200 class="img-responsive">
@@ -175,9 +182,9 @@
                                     .appendTo($stations);
                             });
                             var setting = {
-                                gap:0,
-                                gridWidth:[0,400,600,800,1200],
-                                refresh:400
+                                gap: 0,
+                                gridWidth: [0, 400, 600, 800, 1200],
+                                refresh: 400
                             }
                             // setTimeout(function (){
                             //     $stations
