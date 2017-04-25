@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Dashboard Template for Bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+
+  <!-- Custom styles for this template -->
+  <link href="stylesheets/dashboard.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+  .panel1 h1 {
+    color: #FF8C00;
+    font-family: 微軟正黑體;
+  }
+  .b1{
+    color: purple;
+    font-family: 標楷體;
+    font-size: 16px;
+  }
+  .b2{
+    color: #008000;
+    font-family: 標楷體;
+    font-size: 16px;
+  }
+  .b2:hover{
+    color: black;
+    background-color: yellow;
+    font-family: 標楷體;
+    font-size: 16px;
+  }
+
+  .list li {
+    color: black;
+  }
+
+  .list li em {
+    color: blue;
+    font-family: 微軟正黑體;
+  }
+
+  .list li strong {
+    font-size: 20px;
+    font-family: 微軟正黑體;
+    color: red;
+
+  }
+</style>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="#">Project name</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="Search...">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Export</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="">Nav item</a></li>
+          <li><a href="">Nav item again</a></li>
+          <li><a href="">One more nav</a></li>
+          <li><a href="">Another nav item</a></li>
+          <li><a href="">More navigation</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="">Nav item again</a></li>
+          <li><a href="">One more nav</a></li>
+          <li><a href="">Another nav item</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <!--挖空區域-->
+        <div class="panel panel-primary panel1">
+          <img class="pull-right" src='./images/tax.jpg' width="60" height="65" alt='' />
+          <h1><strong>累進稅率</strong> </h1>
+        </div>
+        <div class="form-group pull-left">
+          <input id="total-income" type="text" class="form-control" placeholder="輸入數字" value="">
+        </div>
+        <button id="compute" type="button" onclick="computeTax(); return false;" class="btn btn-default b1">計算</button>
+        <button id="clear" type="button" onclick="doclear(); return false;" class="btn btn-default b2">清除</button>
+        <ul id="Results" class="list-group-item list">
+          <!--
+                  <li class="list-group-item">
+                    <span class="label label-danger">0A1B</span>
+                    1234
+                  </li>
+                  -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+  <script src="scripts/bootstrap.min.js"></script>
+  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  <!--<script src="../../assets/js/vendor/holder.min.js"></script>-->
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+
+  <script>
+    var taxRateLookup = [{
+        min: 0,
+        max: 540000,
+        rate: .05
+      },
+      {
+        min: 54000,
+        max: 1210000,
+        rate: .12
+      },
+      {
+        min: 1210000,
+        max: 2420000,
+        rate: .2
+      },
+      {
+        min: 2420000,
+        max: 4530000,
+        rate: .3
+      },
+      {
+        min: 4530000,
+        max: 10310000,
+        rate: .4
+      },
+      {
+        min: 10310000,
+        max: null,
+        rate: .5
+      }
+    ];
+
+    function computeTax() {
+      var myTotalIncome = document.getElementById("total-income").value;
+      var shouldPayTax = 0;
+
+      for (var i = 0; i < taxRateLookup.length; i++) {
+        var level = taxRateLookup[i];
+
+        if (level.max == null) {  //如果最大值是Null代表超過預設的額度
+          if (myTotalIncome > level.min) {
+            shouldPayTax += (myTotalIncome - level.min) * level.rate;//用妳的收入減掉level.min(第六個)
+
+          }
+        } else if (myTotalIncome <= level.min) { //若總額小於某階層的min 就pass
+
+        } else if (myTotalIncome > level.min && myTotalIncome <= level.max) {
+          shouldPayTax += (myTotalIncome - level.min) * level.rate;
+        } else {
+          shouldPayTax += (level.max - level.min) * level.rate;
+        }
+      }
+
+      shouldPayTax = Math.ceil(shouldPayTax);
+      // confirm(shouldPayTax);
+      var listItem = document.createElement("li");
+      listItem.className = "list-group-item";
+      listItem.innerHTML = "<p>總收入:" + "<em>" + myTotalIncome + "</em>" + ",需繳之稅額為" + "<strong>" + shouldPayTax +
+        "</strong>" + "</p>";
+
+      // document.getElementById("Results").appendChild(listItem);
+
+      var list = document.getElementById("Results");
+      if (list.childNodes.length > 0) {
+        list.insertBefore(listItem, list.childNodes[0]);
+      } else {
+        list.appendChild(listItem);
+      }
+    }
+    document.getElementById("total-income").onkeyup = function (event) {
+      if (event.keyCode == 13) {
+        computeTax();
+      }
+
+    }
+
+    function doclear() {
+      confirm("確定要清除? 清下去就掰囉");
+      // var input = document.getElementsByClassName("list");
+      // input[0].innerHTML = "";
+      document.getElementById("Results").innerHTML = "";
+
+    }
+  </script>
+</body>
+
+</html>

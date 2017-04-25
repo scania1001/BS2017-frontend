@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>溫度轉換JQuery</title>
+  <!-- Bootstrap core CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="stylesheets/dashboard.css" rel="stylesheet">
+</head>
+<style>
+  .text {
+    font-size: 20px;
+    font-family: 微軟正黑體;
+    padding: 10px 10px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: red;
+    animation-duration: 0.8s;
+    /*動畫持續時間*/
+    animation-name: decoration;
+    /*動畫名稱*/
+    animation-iteration-count: infinite;
+    /*動畫應該運行的數量 infinite=連續*/
+  }
+  
+  strong {
+    color: red;
+    font-size: 25px;
+    font-family: 微軟正黑體;
+  }
+  
+  @keyframes decoration {
+    0% {
+      /*color: yellow;*/
+      opacity: 0;
+    }
+    60% {
+      opacity: 0.8;
+    }
+    80% {
+      color: red;
+      opacity: 6;
+    }
+  }
+  
+  p {
+    color: blue;
+  }
+  
+  p {
+    font-size: 25px;
+    animation-duration: 3s;
+    /*動畫持續時間*/
+    animation-name: cool;
+    /*動畫名稱*/
+    animation-iteration-count: infinite;
+    /*動畫應該運行的數量 infinite=連續*/
+  }
+  
+  @keyframes cool {
+    0% {
+      color: #00FFFF;
+      opacity: 0;
+    }
+    60% {
+      color: #1E90FF;
+      opacity: 0.8;
+    }
+    80% {
+      color: blue;
+      opacity: 6;
+    }
+  }
+</style>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="#">Project name</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="Search...">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Export</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="">Nav item</a></li>
+          <li><a href="">Nav item again</a></li>
+          <li><a href="">One more nav</a></li>
+          <li><a href="">Another nav item</a></li>
+          <li><a href="">More navigation</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="">Nav item again</a></li>
+          <li><a href="">One more nav</a></li>
+          <li><a href="">Another nav item</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="list-unstyled">
+                <li><label><input id="convert-c" type="radio" name="unit" value="c" checked> 攝氏轉換為華氏</label></li>
+                <li><label><input id="convert-f" type="radio" name="unit" value="f"> 華氏轉換為攝氏</label></li>
+              </ul>
+              <div id="buttons">
+                <div class="row">
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">1</a></div>
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">2</a></div>
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">3</a></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">4</a></div>
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">5</a></div>
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">6</a></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">7</a></div>
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">8</a></div>
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">9</a></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">0</a></div>
+                  <div class="col-md-4"><a class="btn btn-default btn-block input-pad" href="#" role="button">.</a></div>
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                  <div class="input-group">
+                    <input id="input" class="form-control text-right" type="text" name="temperature" value="">
+                    <div class="input-group-btn">
+                      <a id="convert" type="button" class="btn btn-default" onclick="doCalculate(); return false;">轉換</a>
+                      <a id="clear" type="button" class="btn btn-default" onclick="doClear(); return false;"> 清除</a>
+                      <!-- Buttons -->
+                    </div>
+                  </div>
+                  <br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                  <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon1">結果</span>
+                    <input id="result" class="form-control text-right" type="text" name="temperature" value="0" readonly>
+                    <!--<input id="notices" class="form-control text-right" type="text" name="temperature" value="" readonly>-->
+                  </div>
+                  <li id="text1" class="list-group-item text" role="alert"></li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $("#convert").click(function () {
+
+      var $input = $("#input"),
+        $result = $("#result"),
+        $convertC = $("#convert-c"),
+        $convertF = $("#convert-f"),
+        $shows = $("#text1"),
+        $r = 0;
+
+      if ($convertC.prop("checked")) {
+        $r = ($input.val() * 1.8) + 32;
+        if ($r >= 0 && $r <= 50) {
+            $shows.html("好冷喔....");
+        } else {
+          $shows.html("有點太熱了");
+        }
+      } else if ($convertF.prop("checked")) {
+        $r = ($input.val() - 32) / 1.8;
+        if ($r <= 20) {
+         $shows.html("<p>好冷.....</p>");
+        } else {
+          $shows.html("<h2>太熱了啦  <strong>Warning</strong></h2>");
+        }
+      }
+
+      $result.val($r);
+
+
+    });
+
+    $("#clear").click(function () {
+      $("#input").val("");
+      $("#result").val("");
+      $("#text1").html("");
+    });
+
+    $(".input-pad").click(function () {
+      var $this = $(this),
+        $input = $("#input");
+
+      $input.val($input.val() + $this.text());
+    });
+  </script>
+</body>
+
+</html>

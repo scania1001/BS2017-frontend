@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .main {
+            background: #FFF8DC;
+        }
+        .top1 ol li{
+            color: #463E3F;
+        }
+        .top2 .left2 a {
+            color: #0000A0;
+            font-size: 14px;
+        }
+        
+        .top2 .left2 h4 {
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .panel1 dl {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .panel1 dl a {
+            color: #3BB9FF;
+            font-size: 12px;
+            float: right;
+        }
+        
+        .panel2 a {
+            color: #3BB9FF;
+            font-size: 12px;
+        }
+        
+        .panel2 .panel2-1 {
+            color: green;
+            font-weight: bold;
+        }
+        
+        .panel3 a {
+            color: #3BB9FF;
+            font-size: 12px;
+        }
+        
+        .panel3 .panel3-1{
+            color: blue;
+            font-weight: bold;
+        }
+        .panel4 .panel4-1{
+            color: #7D0552;
+            font-weight: bold;
+        }
+        .mylist .listright {
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .media .media2 a {
+            color: #3BB9FF;
+            margin: 10px 15px;
+            float: right;
+            font-size: 12px;
+        }
+        
+        .media .media3 a {
+            color: #3BB9FF;
+            margin: 10px 15px;
+            float: right;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container main">
+        <!--頂端左右兩邊-->
+        <div class="row top1">
+            <div class="pull-left">
+                <ol class="breadcrumb">
+                    <li>Welcome XXX XXXXX</li>
+                    <li>22 March,2017</li>
+                </ol>
+            </div>
+            <div class="pull-right">
+                <a href="#">Personal Settings</a>
+                <br>
+                <a href="#">Help</a>
+            </div>
+        </div>
+        <!--頂端第二行-->
+        <div class="row top2">
+            <div class="pull-left">
+                <div class="alert alert-success" role="alert">[Intranet name]</div>
+            </div>
+            <div class=" pull-right">
+                Search:
+                <label>            
+                        <input type="radio" name="optionsRadios" id="radiobtn1" value="option1" checked>"ALL"                
+                    </label>
+                <label> 
+                        <input type="radio" name="optionsRadios" id="radiobtn2" value="option2"> Contacts                
+                     </label>
+                <br>
+                <input class="text form-group" type="text" placeholder="Search">
+                <button type="submit" class="btn btn-default">GO</button>
+            </div>
+            <!--中間-->
+            <div class="list">
+                <div class="btn-group btn-group-justified" role="group">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">Home</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">News</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">Projects & Collaboration</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">Policies & Procedures</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">Tool & Services</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">Organization</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">Me & Skanska</button>
+                    </div>
+                </div>
+            </div>
+            <!--中間左邊-->
+            <div class="left1 pull-left">
+                You are here:<a href="#">Home</a>
+                <h4>Home</h4>
+            </div>
+            <!--中間右邊-->
+            <div class="right1 pull-right">
+                <br>
+                <a href="#"> Customize page</a>
+            </div>
+        </div>
+        <!--下面左半部-->
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div class="pull-left">
+                    <div class="panel panel-default panel1">
+                        <div class="panel-body">
+                            <div class="info" role="alert">XXX XXX<span class="caret pull-right"></span></div>
+                            <span class="glyphicon glyphicon-user" aria-hidden="true">
+                            <dl class="list pull-right"> 
+                                <dd>Phone Number</dd>
+                                <dd>Call Number</dd>
+                                <dd>Title</dd>
+                                <dd>Business unit</dd>
+                                <dd>Company / deep</dd>
+                                </span><br>
+                            <a href="#" class="link pull-right ">Edits shortcuts</a>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel2">
+                        <div class="panel panel-heading panel2-1">My tools</div>
+                        <div class="panel-body">
+                            Media's bank<br> Accounting <br> Talent navigator <br>etc...... <br><br>
+                            <a href="#" class="pull-right link">Edits shortcuts </a>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel3">
+                        <div class="panel-heading panel3-1">My shortcuts</div>
+                        <div class="panel-body">
+                            LinkA<br> LinkB <br> LinkC <br>
+                            <a href="#" class="pull-right link">Edits shortcuts </a>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel4">
+                        <div class="panel-heading panel4-1">Skanska shortcuts</div>
+                        <div class="panel-body">
+                            Decided by business unit
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <div class="row">
+                    <!--下面中間-->
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <ul class="mylist list-group">
+                            <li class="list-group-item">My notifacations<span class="caret pull-right"></span></li>
+                            <li class="list-group-item">Project System
+                                <div class="listright pull-right">7 notifacations</div>
+                            </li>
+                            <li class="list-group-item">WorkSpaces
+                                <div class="listright pull-right">4 notifacations</div>
+                            </li>
+                            <li class="list-group-item">News System
+                                <div class="listright pull-right">2 notifacations</div>
+                            </li>
+                        </ul>
+                        <div class="panel panel-default">
+                            <div class="panel-body"><strong>Top Story</strong></div>
+                        </div>
+                        <div>23/03/2017 Skanska awarded Brooklyn Bridge Park contract</div>
+                        <br>
+                        <div class="middle pull-left">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#"> <img alt="" class="media-object" src="https://dummyimage.com/150x150.png" data-holder-rendered="true"
+                                            style="width: 150px; height: 150px;"> </a>
+                                </div>
+                                <div class="media2 media-body">
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum
+                                    in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+                                    Donec lacinia congue felis in faucibus.
+                                    <br><br><br><br>
+                                    <a href="#">Read more</a>
+                                    <a href="#">Comment(3)</a>
+                                    <a href="#">Other top stories</a>
+                                </div>
+                            </div>
+                            <br>
+                            <div><strong>News</strong></div>
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="active"><a href="#">All</a></li>
+                                <li role="presentation"><a href="#">My local</a></li>
+                                <li role="presentation"><a href="#">My unit</a></li>
+                                <li role="presentation"><a href="#">My country</a></li>
+                                <li role="presentation"><a href="#">Global</a></li>
+                            </ul>
+                        </div>
+                        23/03/2017 Loreum ipsum color sit amat<br> [topic/org/geo]
+                        <div class="middle pull-left">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#"> <img alt="" class="media-object" src="https://dummyimage.com/90x120.png" data-holder-rendered="true"
+                                            style="width: 90px; height: 120px;"> </a>
+                                </div>
+                                <div class="media3 media-body">
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum
+                                    in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+                                    Donec lacinia congue felis in faucibus.<br>Cras sit
+                                    amet nibh libero
+                                    <br><br>
+                                    <a href="#">Read more</a>
+                                    <a href="#">Comment(1)</a>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    Commodo aute quis est eiusmod. Id in exercitation do ut non labore aliquip reprehenderit irure labore magna dolor. Quis veliteiusmod
+                                    magna quis ut ea dolor aliquip magna consequat duis amet consequat.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--下面右半部-->
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Banner</div>
+                            <div class="panel-body">
+                                Examples:<br>
+                                <ul class="list2">
+                                    <li>Meet our new symbol-Green</li>
+                                    <li>Safety work</li>
+                                    <li>Name competion intranet</li>
+                                    <li>Donate your old cell phone</li>
+                                    <li>SEOP</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">My Godgets</div>
+                            <div class="panel-body">
+                                Examples:<br>
+                                <ul class="list2">
+                                    <li><a href="#">Menu from restaurant</a></li>
+                                    <li><a href="#">Wheather</a></li>
+                                    <li><a href="#">Stock ticker</a></li>
+                                    <li><a href="#">Calender</a></li>
+                                    <li><a href="#">Currencies</a></li>
+                                    <li><a href="#"> zones</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>生命靈數計算(ajax)</title>
+    <!-- Bootstrap core CSS -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="stylesheets/dashboard.css" rel="stylesheet">
+</head>
+<style>
+    .listtop {
+        background: #FFFFE0;
+    }
+    
+    .listtop strong {
+        color: #0000CD;
+        font-size: 40px;
+        font-family: Microsoft JhengHei;
+    }
+    
+    .btn1 {
+        color: red;
+        font-size: 20px;
+        font-family: DFKai-sb;
+    }
+    
+    .btn1:hover {
+        color: black;
+        font-weight: bold;
+    }
+    
+    .btn2 {
+        color: #4169E1;
+        font-size: 20px;
+        font-family: DFKai-sb;
+    }
+</style>
+
+
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <input type="text" class="form-control" placeholder="Search...">
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Export</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="">Nav item</a></li>
+                    <li><a href="">Nav item again</a></li>
+                    <li><a href="">One more nav</a></li>
+                    <li><a href="">Another nav item</a></li>
+                    <li><a href="">More navigation</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="">Nav item again</a></li>
+                    <li><a href="">One more nav</a></li>
+                    <li><a href="">Another nav item</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <li class="listtop list-group-item">
+                        <div><strong>生命靈數</strong>
+                            <div class="pull-right">
+                                <img src='images/1234.jpg' alt='' width="200" height="60" />
+                            </div>
+                        </div>
+                    </li>
+
+                    <br>
+                    <div class="form-group pull-left ">
+                        <input id="birthdate" name="birthdate" type="text" class="form-control">
+
+                    </div>
+                    <button  type="submit"onclick="doAnalysis(); return false ;" class="btn1 btn-default"> 計算</button>
+                    <button id="clear" onclick="doclear(); return false ;" class="btn2 btn-default">清除</button>
+                    <ul id="Results" class="list list-group-item">
+                        <!--
+                  <li class="list-group-item">
+                    <span class="label label-danger"></span>
+                    
+                  </li>
+                  -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.zh-TW.min.js"></script>
+    <!--語系檔-->
+
+    <script>
+       
+            $("#birthdate").datepicker({//因有載入語系檔，可修改
+                language: 'zh-TW',
+                format: 'yyyy-mm-dd'
+            });
+
+            function horoscopeName(dateString) {
+                var date = new Date(dateString),
+                    m = date.getMonth() + 1,
+                    d = date.getDate();
+
+                if ((m == 1 && d >= 21) || (m == 2 && d <= 19)) {
+                    return "Aquarius";
+                } else if ((m == 2 && d >= 20) || (m == 3 && d <= 20)) {
+                    return "Pisces";
+                } else if ((m == 3 && d >= 21) || (m == 4 && d <= 19)) {
+                    return "Aries";
+                } else if ((m == 4 && d >= 20) || (m == 5 && d <= 20)) {
+                    return "Taurus";
+                } else if ((m == 5 && d >= 21) || (m == 6 && d <= 21)) {
+                    return "Gemini";
+                } else if ((m == 6 && d >= 22) || (m == 7 && d <= 22)) {
+                    return "Cancer";
+                } else if ((m == 7 && d >= 23) || (m == 8 && d <= 22)) {
+                    return "Leo";
+                } else if ((m == 8 && d >= 23) || (m == 9 && d <= 22)) {
+                    return "Virgo";
+                } else if ((m == 9 && d >= 23) || (m == 10 && d <= 23)) {
+                    return "Libra";
+                } else if ((m == 10 && d >= 24) || (m == 11 && d <= 21)) {
+                    return "Scorpio";
+                } else if ((m == 11 && d >= 22) || (m == 12 && d <= 20)) {
+                    return "Sagittarius";
+                } else if ((m == 12 && d >= 21) || (m == 1 && d <= 20)) {
+                    return "Capricorn";
+                }
+
+            }
+            function getNumberIndex(dateString) { //將生日拆解後並相加
+
+                var date = new Date(dateString), //ex:2000/2/1
+
+                    y = date.getFullYear().toString(),
+                    m = (date.getMonth() + 1).toString(),
+                    d = date.getDate().toString();
+
+                var ymd = y + m + d; //200021
+                return getIndex(ymd);
+
+            }
+
+            function getIndex(source) { //200021
+                var result = 0;
+
+                for (var i = 0; i < source.length; i++) //將200021依依相加
+                {
+                    result = result + parseInt(source[i]);
+                }
+
+                if (result > 9) { //相加後為12(以200021為例)，大於9 先將12改成字串變成1跟2，再回去跑迴圈
+                    result = getIndex(result.toString());
+                }
+
+                return result;
+            }
+
+            function doAnalysis() {
+                var birthdate = $("#birthdate").val(); //把使用者輸入的日期抓出來
+
+                var name = horoscopeName(birthdate).toLowerCase();//toLowerCase將大寫轉小寫
+
+                // var yourhoroscope = horoscopeData[name]; //再將取得的星座參數、評語，找出對應的資料
+
+                var url = "https://gist.githubusercontent.com/dinowang/5290d4cebf96a666c29ab0878afeb2f1/raw/9516581cb54154d070cf287ebd31d9bce217a495/" + name + ".json";
+
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    data: null,
+                    dataType: "json",
+                    error: function (result, status, xhr) {
+                        alert("無法取得sever上的資料");
+                    },
+                    success: function (result, status, xhr) {
+                        var index = getNumberIndex(birthdate); //計算生日加總
+
+                        var html = "<p><span class= 'label label-primary'>" + birthdate + "</span>出生的你，星座是<em>" +
+                            result.name + "</em></p>" +
+                            "<p>你的生命靈數:<br>" + index + ". " +
+                            result.lookup[index - 1] + "</p>";
+
+                        $("<li></li>")
+                            .addClass("list-group-item")
+                            .html(html)
+                            .prependTo("#Results");
+                    }
+                });
+            }
+            // $("#analysis").click(function () {
+            //     doAnalysis();
+            // });
+
+            $("#birthdate").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    doAnalysis();
+                }
+            });
+            //var listItem = document.createElement("li");
+            // confirm(index);
+
+
+
+            //document.getElementById("Results").appendChild(listItem);
+
+
+
+            // var list = document.getElementById("Results");
+            // if (list.childNodes.length > 0) {
+            //     list.insertBefore(listItem, list.childNodes[0]);
+            // } else {
+            //     list.appendChild(listItem);
+            // }
+     
+        function doclear() {
+            confirm("確定要清除? 清下去就掰囉");
+            // var input = document.getElementsByClassName("list");
+            // input[0].innerHTML = "";
+            document.getElementById("Results").innerHTML = "";
+
+        }
+    </script>
+</body>
+
+</html>

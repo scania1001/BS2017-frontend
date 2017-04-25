@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>肉球新聞</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./stylesheets/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /*寫CSS*/
+        
+        h1.logo a {
+            display: block;
+            /*要有block才可以設定寬跟高*/
+            text-indent: 110%;
+            /*指定文字第一行縮排值*/
+            white-space: nowrap;
+            overflow: hidden;
+            width: 323px;
+            height: 156px;
+            background: url(./images/TTV.png) no-repeat;
+        }
+        
+        h2.slogan {
+            margin-top: 40px;
+        }
+        
+        h2.slogan strong {
+            font-size: 1.5em;
+            color: #ff8086;
+        }
+        
+        .menu-area {
+            /*list-inline的設定*/
+            background-color: #ff8086;
+            margin-bottom: 20px;
+            /*跟下面要留的空間距離*/
+        }
+        
+        .menu-area ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .menu-area ul li {
+            /*menu-area底下的ul底下的li裡面有關字的設定*/
+            float: left;
+            /*元素浮動方向*/
+            width: 25%;
+            padding: 0;
+            /*指定邊框內的留白尺寸*/
+            margin: 0;
+            /*指定元素在邊框外側的留白尺寸*/
+            text-align: center;
+            /*文字置中*/
+            font-size: 20px;
+            font-family: Microsoft JhengHei;
+        }
+        
+        .menu-area ul li a {
+            display: block;
+            padding: 10px 0;
+            /*兩個數字時 前者為上下 後者為左右*/
+            color: white;
+            text-decoration: none;
+            /*用於文字上增加底線或刪節線*/
+        }
+        
+        .menu-area ul li a:hover {
+            background: deepskyblue;
+            color: black;
+        }
+      
+        .main2 .media {
+            /*讓下面內容間的間隔開一點*/
+            margin-bottom: 20px;
+        }
+        
+        .main2 .media strong {
+            color: red;
+            font-size: 20px;
+        }
+        
+        .main2 .media h4 {
+            color: blue
+        }
+        
+        .side h2 {
+            border-bottom: 5px green solid;
+            margin-bottom: 20px;
+        }
+        
+        .side ol li a {
+            color: mediumpurple;
+            line-height: 2em;
+            font-size: 16px;
+            /*右邊排行內的每筆標題間的高度距離*/
+        }
+        
+        .footer {
+            background: black;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container ">
+        <h1 class="logo pull-left"><a href="#">肉球新聞</a></h1>
+        <h2 class="slogan pull-right">全宇宙最<strong>可愛</strong>的新聞</h2>
+    </div>
+
+    <div class="container-fluid menu-area">
+
+        <div class="container">
+            <ul class="list-inline">
+                <!--list-inline將條列式改成一列-->
+                <li><a href="#">最新消息</a></li>
+                <li><a href="#">專題報導</a></li>
+                <li><a href="#">活動情報</a></li>
+                <li><a href="#">討論區</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container main1">
+        <div class="row">
+            <div class="col-md-9 main2">
+
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="https://dummyimage.com/200x150.png" alt="Image">
+                    </a>
+                    <h4 class="media-heading"><strong>Sit incididunt minim mollit nostrud.</strong></h4>
+                    <p>Nostrud qui fugiat deserunt cillum veniam magna adipisicing minim excepteur occaecat laboris amet. Consectetur
+                        esse labore consectetur quis duis exercitation sint enim aute. Aliquip proident minim Lorem excepteur
+                        eDuis sunt ex minim minim commodo. Reprehenderit do est voluptate amet Lorem velit est cillum minim.
+                        Id sint culpa est voluptate nostrud esse laborum. lit sit pariatur velit cillum exercitation. Irure
+                        cupidatat laboris sit eiusmod in. Nostrud officia sint magna velit officia. Eu laboris quis quis
+                        duis labore magna. Proident dolor ea tempor aliqua fugiat aute ut fugiat velit esse ad tempor. Laborum
+                        laborum deserunt cillum laboris elit minim deserunt dolor qui. Quis aliquip ullamco fugiat magna.
+                    </p>
+                    <div class="text-right">
+                        <a href="#">more</a>
+                    </div>
+                    <!--<div class="media-body">-->
+
+                    <!--</div>-->
+                </div>
+
+                <div class="row">
+                    <div class=" col-md-6 ">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="https://dummyimage.com/120x90.png" alt="Image">
+                            </a>
+                            <h4 class="media-heading">lit sit pariatur velit cillum exercitation. Irure cupidatat laboris sit eiusmod in.</h4>
+                            <p>Nostrud officia sint magna velit officia. Eu laboris quis quis duis labore magna. Proident dolor
+                                ea tempor aliqua fugiat aute ut fugiat velit esse ad tempor. Laborum laborum deserunt cillum
+                                laboris elit minim deserunt dolor qui. Quis aliquip ullamco fugiat magna.</p>
+                            <!--<div class="media-body">-->
+
+                            <!--</div>-->
+                        </div>
+                    </div>
+                    <div class=" col-md-6 ">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="https://dummyimage.com/120x90.png" alt="Image">
+                            </a>
+                            <h4 class="media-heading">Velit exercitation nostrud officia minim aute nulla voluptate aute adipisicing voluptate consectetur
+                                ad aute cillum. </h4>
+                            <p>Incididunt enim reprehenderit irure minim irure ut. Nisi qui anim aute fugiat. Proident non dolor
+                                id minim enim labore nostrud. Veniam non aute est anim officia. Do elit veniam proident aliquip
+                                tempor consectetur est proident elit ullamco. Dolore nisi incididunt labore fugiat anim consectetur
+                                consequat nostrud anim occaecat consequat.
+                            </p>
+                            <!--<div class="media-body">-->
+
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-md-6 ">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="https://dummyimage.com/120x90.png" alt="Image">
+                            </a>
+                            <h4 class="media-heading">Velit exercitation nostrud officia minim aute nulla voluptate aute adipisicing voluptate consectetur
+                                ad aute cillum. </h4>
+                            <p>Incididunt enim reprehenderit irure minim irure ut. Nisi qui anim aute fugiat. Proident non dolor
+                                id minim enim labore nostrud. Veniam non aute est anim officia. Do elit veniam proident aliquip
+                                tempor consectetur est proident elit ullamco. Dolore nisi incididunt labore fugiat anim consectetur
+                                consequat nostrud anim occaecat consequat.
+                            </p>
+                            <!--<div class="media-body">-->
+
+                            <!--</div>-->
+                        </div>
+                    </div>
+                    <div class=" col-md-6 ">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="https://dummyimage.com/120x90.png" alt="Image">
+                            </a>
+                            <h4 class="media-heading">Velit exercitation nostrud officia minim aute nulla voluptate aute adipisicing voluptate consectetur
+                                ad aute cillum. </h4>
+                            <p>Incididunt enim reprehenderit irure minim irure ut. Nisi qui anim aute fugiat. Proident non dolor
+                                id minim enim labore nostrud. Veniam non aute est anim officia. Do elit veniam proident aliquip
+                                tempor consectetur est proident elit ullamco. Dolore nisi incididunt labore fugiat anim consectetur
+                                consequat nostrud anim occaecat consequat.
+                            </p>
+                            <!--<div class="media-body">要產生文繞圖，將h4跟p移至外面-->
+
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-md-6 ">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="https://dummyimage.com/120x90.png" alt="Image">
+                            </a>
+                            <h4 class="media-heading">Velit exercitation nostrud officia minim aute nulla voluptate aute adipisicing voluptate consectetur
+                                ad aute cillum. </h4>
+                            <p>Incididunt enim reprehenderit irure minim irure ut. Nisi qui anim aute fugiat. Proident non dolor
+                                id minim enim labore nostrud. Veniam non aute est anim officia. Do elit veniam proident aliquip
+                                tempor consectetur est proident elit ullamco. Dolore nisi incididunt labore fugiat anim consectetur
+                                consequat nostrud anim occaecat consequat.
+                            </p>
+                            <!--<div class="media-body">要產生文繞圖，將h4跟p移至外面-->
+
+                            <!--</div>-->
+                        </div>
+                    </div>
+                    <div class=" col-md-6 ">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="https://dummyimage.com/120x90.png" alt="Image">
+                            </a>
+                            <h4 class="media-heading">Irure nostrud nostrud commodo deserunt. </h4>
+                            <p>Incididunt enim reprehenderit irure minim irure ut. Nisi qui anim aute fugiat. Proident non dolor
+                                id minim enim labore nostrud. Veniam non aute est anim officia. Do elit veniam proident aliquip
+                                tempor consectetur est proident elit ullamco. Dolore nisi incididunt labore fugiat anim consectetur
+                                consequat nostrud anim occaecat consequat.
+                            </p>
+                            <!--<div class="media-body">-->
+
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="col-md-3 side">
+                <img src="https://dummyimage.com/220x220.png" class="img-responsive" alt="Image">
+                <h2>新聞排行</h2>
+                <ol>
+                    <li><a href="#">Adipisicing dolor nulla duis eu.</a></li>
+                    <li><a href="#">Laboris laboris id consectetur ex.</a></li>
+                    <li><a href="#">Adipisicing dolor nulla duis eu.</a></li>
+                    <li><a href="#">Adipisicing dolor nulla duis eu.</a></li>
+                    <li><a href="#">Adipisicing dolor nulla duis eu.</a></li>
+                    <li><a href="#">Adipisicing dolor nulla duis eu.</a></li>
+                    <li><a href="#">Adipisicing dolor nulla duis eu.</a></li>
+                    <li><a href="#">Adipisicing dolor nulla duis eu.</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid footer">
+        <div class="container">
+            <p class="text-center">Copyright &copy; 2017 肉球新聞</p>
+        </div>
+
+    </div>
+
+
+    <script src="./scripts/bootstrap.min.js"></script>
+</body>
+
+</html>
